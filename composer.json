@@ -1,7 +1,7 @@
 {
-  "name": "crell/*",
-  "homepage": "https://github.com/Crell/*",
-  "license": "LGPL-3.0-or-later",
+  "name": "crell/midy",
+  "description": "A tool for building static or Mildly Dynamic websites",
+  "license": "GPL-3.0-or-later",
   "authors": [
     {
       "name": "Larry Garfield",
@@ -21,13 +21,12 @@
   },
   "autoload": {
     "psr-4": {
-      "Crell\\Foo\\": "src"
+      "App\\": "src"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Crell\\Foo\\": "tests",
-      "Crell\\Foo\\Benchmarks\\": "benchmarks"
+      "App\\": "tests"
     }
   },
   "scripts": {
