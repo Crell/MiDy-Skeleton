@@ -7,3 +7,6 @@ composer.lock
 
 .idea
 *.iml
+
+cache/*
+!cache/.gitkeep
