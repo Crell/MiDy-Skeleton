@@ -5,7 +5,7 @@ declare(strict_types=1);
 use HttpSoft\Emitter\SapiEmitter;
 use Nyholm\Psr7Server\ServerRequestCreator;
 use Symfony\Component\Dotenv\Dotenv;
-use Crell\MiDy\MiDy;
+use App\App;
 
 require __DIR__ . '/../vendor/autoload.php';
 
@@ -15,7 +15,7 @@ if (file_exists($envFile)) {
     $dotenv->loadEnv($envFile);
 }
 
-$app = new MiDy();
+$app = new App();
 
 $serverRequest = $app->container->get(ServerRequestCreator::class)->fromGlobals();
 
