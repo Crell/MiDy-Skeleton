@@ -5,32 +5,34 @@ on:
         branches: ['master']
     pull_request: ~
 
-jobs:
-    phpunit:
-        name: PHPUnit tests on ${{ matrix.php }}
-        runs-on: ubuntu-latest
-        strategy:
-            matrix:
-                php: [ '8.4', '8.5' ]
-        steps:
-            - uses: actions/checkout@v2
-            - uses: shivammathur/setup-php@v2
-              with:
-                  php-version: ${{ matrix.php }}
-                  coverage: xdebug
-            - run: composer install --no-progress
-            - run: vendor/bin/phpunit
-    phpstan:
-        name: PHPStan checks on ${{ matrix.php }}
-        runs-on: ubuntu-latest
-        strategy:
-            matrix:
-                php: [ '8.4' ]
-        steps:
-            - uses: actions/checkout@v2
-            - uses: shivammathur/setup-php@v2
-              with:
-                  php-version: ${{ matrix.php }}
-                  coverage: none
-            - run: composer install --no-progress
-            - run: vendor/bin/phpstan
+# These are commented out as they are not really needed on a plain site.
+# If you add additional custom code you want to test, uncomment these lines.
+#jobs:
+#    phpunit:
+#        name: PHPUnit tests on ${{ matrix.php }}
+#        runs-on: ubuntu-latest
+#        strategy:
+#            matrix:
+#                php: [ '8.4', '8.5' ]
+#        steps:
+#            - uses: actions/checkout@v2
+#            - uses: shivammathur/setup-php@v2
+#              with:
+#                  php-version: ${{ matrix.php }}
+#                  coverage: xdebug
+#            - run: composer install --no-progress
+#            - run: vendor/bin/phpunit
+#    phpstan:
+#        name: PHPStan checks on ${{ matrix.php }}
+#        runs-on: ubuntu-latest
+#        strategy:
+#            matrix:
+#                php: [ '8.4' ]
+#        steps:
+#            - uses: actions/checkout@v2
+#            - uses: shivammathur/setup-php@v2
+#              with:
+#                  php-version: ${{ matrix.php }}
+#                  coverage: none
+#            - run: composer install --no-progress
+#            - run: vendor/bin/phpstan
